@@ -517,6 +517,14 @@ fieldset{border:none}
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
   backdrop-filter:blur(8px);padding:.35rem .875rem;border-radius:var(--r-pill);
 }
+/* Em dispositivos touch, troca texto para "Passa o dedo" */
+@media(hover:none){
+  .compare-tag{font-size:0;}
+  .compare-tag::before{
+    content:"Toque para ver";
+    font-size:.65rem;font-weight:700;letter-spacing:.14em;
+  }
+}
 .compare-caption{
   position:absolute;bottom:0;left:0;right:0;z-index:4;
   padding:1.25rem 1.25rem .875rem;
@@ -943,6 +951,28 @@ fieldset{border:none}
 
 /* ── RESPONSIVO — MOBILE ────────────────────────────────────── */
 @media(max-width:767px){
+  /* ── PERFORMANCE — desabilita efeitos caros no mobile ── */
+  body::after{display:none;} /* grain noise */
+  .hero-orb,.method-orb{
+    animation:none;filter:blur(40px);
+    will-change:auto;
+  }
+  .hero-grid-overlay{animation:none;}
+  .marquee-track{animation-duration:24s;}
+
+  /* Reduz backdrop-filter (caro em GPU) */
+  .glass-dark,.hero-chip,.hero-stats,.tcard,.pillar-card,
+  .form-info,.form-card,.btn-ghost,.cred-item,.about-float-tag{
+    backdrop-filter:none;-webkit-backdrop-filter:none;
+  }
+
+  /* content-visibility para seções fora da viewport */
+  .section-gallery,.section-method,.section-form,
+  .section-about,.site-footer{
+    content-visibility:auto;
+    contain-intrinsic-size:auto 800px;
+  }
+
   :root{
     --sec-y:2.5rem;
     --stack-r:1.5rem;
