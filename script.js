@@ -247,39 +247,25 @@
       btnSpinner.style.display = 'block';
       if (btnArrow) btnArrow.style.display = 'none';
 
-      fetch('pixel.php', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'X-Requested-With': 'XMLHttpRequest' },
-      })
-        .then(r => { if (!r.ok) throw new Error('Erro de rede'); return r.json(); })
-        .then(data => {
-          if (data.success) {
-            if (typeof fbq !== 'undefined') {
-              fbq('track', 'Lead', {
-                content_name: 'Avaliacao_Medica',
-                content_category: new FormData(form).get('queixa') || 'geral',
-              });
-            }
-            window.location.href = 'obrigado/';
-          } else throw new Error(data.message || 'Falha.');
-        })
-        .catch(() => {
-          btnText.textContent = 'Enviar e solicitar agendamento';
-          btnSpinner.style.display = 'none';
-          if (btnArrow) btnArrow.style.display = '';
-          submitBtn.disabled = false;
+      /* Dispara pixel.php em background — sem bloquear o redirect */
+      try {
+        fetch('pixel.php', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        }).catch(() => {});
+      } catch (_) {}
 
-          const prev = form.querySelector('.submit-error');
-          if (prev) prev.remove();
-          const alert = document.createElement('p');
-          alert.className = 'submit-error form-error';
-          alert.setAttribute('role', 'alert');
-          alert.style.textAlign = 'center';
-          alert.style.marginTop = '.75rem';
-          alert.textContent = 'Não foi possível enviar. Tente pelo WhatsApp.';
-          submitBtn.insertAdjacentElement('afterend', alert);
+      /* Meta Pixel Lead event */
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+          content_name: 'Avaliacao_Medica',
+          content_category: new FormData(form).get('queixa') || 'geral',
         });
+      }
+
+      /* Redireciona sempre para a página de obrigado */
+      window.location.href = 'obrigado/index.html';
     });
   }
 
