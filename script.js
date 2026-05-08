@@ -261,7 +261,7 @@
                 content_category: new FormData(form).get('queixa') || 'geral',
               });
             }
-            window.location.href = 'obrigado.html';
+            window.location.href = 'obrigado/';
           } else throw new Error(data.message || 'Falha.');
         })
         .catch(() => {
