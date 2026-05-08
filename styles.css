@@ -1096,18 +1096,21 @@ fieldset{border:none}
   .form-card{border-radius:var(--r-xl);}
   .form-row{grid-template-columns:1fr;gap:.75rem;}
   .form-info{
+    min-width:0;
     text-align:center;
     padding:1.75rem 1.25rem;
     align-items:center;
     border-radius:var(--r-xl) var(--r-xl) 0 0;
   }
   .form-info-title{font-size:1.05rem;}
-  .form-fields{padding:1.75rem 1.25rem;}
+  .form-stat-row{gap:1rem;justify-content:space-between;}
+  .form-stat span{font-size:.58rem;letter-spacing:.06em;white-space:nowrap;}
+  .form-fields{min-width:0;padding:1.75rem 1.25rem;}
   .form-benefits{text-align:left;}
   .form-benefits li{font-size:.8rem;}
   .chip-group{flex-direction:column;gap:.5rem;}
   .chip-label{width:100%;justify-content:center;}
-  .form-privacy{align-items:flex-start;text-align:left;align-self:center;max-width:260px;}
+  .form-privacy{align-items:center;text-align:center;justify-content:center;align-self:center;max-width:100%;}
   .form-input,.form-textarea{font-size:.875rem;padding:.875rem 1rem;}
   .form-label{font-size:.7rem;text-align:center;}
   .form-group-full .form-label{text-align:center;}
