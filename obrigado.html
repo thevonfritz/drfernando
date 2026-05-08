@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Obrigado! | Dr. Fernando Petersen</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2300204F'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='central' text-anchor='middle' font-family='Montserrat,sans-serif' font-weight='800' font-size='22' fill='%230EA5E9'%3EFP%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel — dispara Lead na chegada nesta página -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','SEU_PIXEL_ID_AQUI');
+    fbq('track','PageView');
+    fbq('track','Lead');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=Lead&noscript=1" alt=""/></noscript>
+
+  <style>
+    /* ── reset mínimo ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#00112E;
+      color:#fff;
+      min-height:100svh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      position:relative;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* grain */
+    body::after{
+      content:'';position:fixed;inset:0;pointer-events:none;z-index:999;
+      opacity:.025;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode:overlay;
+    }
+
+    /* orbs aurora */
+    .orb{
+      position:absolute;border-radius:50%;pointer-events:none;
+      filter:blur(80px);
+    }
+    .orb-1{width:60vw;height:60vw;top:-20%;left:-15%;background:radial-gradient(circle,rgba(14,165,233,.40) 0%,transparent 65%);animation:orbFloat 22s ease-in-out infinite alternate;}
+    .orb-2{width:45vw;height:45vw;bottom:-15%;right:-10%;background:radial-gradient(circle,rgba(2,132,199,.35) 0%,transparent 65%);animation:orbFloat 18s ease-in-out infinite alternate-reverse;}
+    .orb-3{width:30vw;height:30vw;top:50%;right:15%;background:radial-gradient(circle,rgba(56,189,248,.20) 0%,transparent 65%);animation:orbFloat 14s ease-in-out infinite alternate;}
+
+    /* grid overlay */
+    .grid-bg{
+      position:absolute;inset:0;z-index:0;
+      background-image:
+        linear-gradient(rgba(14,165,233,.07) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(14,165,233,.07) 1px,transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 0%,transparent 90%);
+      -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000 0%,transparent 90%);
+    }
+
+    /* card central */
+    .card{
+      position:relative;z-index:1;
+      text-align:center;
+      padding:4rem 3.5rem;
+      max-width:560px;
+      width:calc(100% - 2.5rem);
+      background:rgba(255,255,255,.055);
+      backdrop-filter:blur(28px) saturate(160%);
+      -webkit-backdrop-filter:blur(28px) saturate(160%);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:3rem;
+      box-shadow:0 32px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(14,165,233,.10), 0 0 80px rgba(14,165,233,.12);
+      animation:cardIn 1s cubic-bezier(.16,1,.3,1) both;
+    }
+    .card::before{
+      content:'';position:absolute;inset:0;border-radius:inherit;
+      background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 60%);
+      pointer-events:none;
+    }
+
+    /* ícone de check */
+    .check-wrap{
+      width:6rem;height:6rem;border-radius:50%;
+      background:linear-gradient(135deg,#10b981,#059669);
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 2rem;
+      box-shadow:0 0 0 8px rgba(16,185,129,.15),0 16px 48px rgba(16,185,129,.40);
+      animation:checkPop 1s .3s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .check-wrap svg{width:2.75rem;height:2.75rem;}
+
+    /* título */
+    .ty-title{
+      font-size:clamp(1.875rem,5vw,2.75rem);
+      font-weight:900;
+      letter-spacing:-.04em;
+      line-height:1.1;
+      margin-bottom:1rem;
+      animation:fadeUp .8s .5s cubic-bezier(.16,1,.3,1) both;
+    }
+    .ty-title em{
+      font-style:normal;
+      background:linear-gradient(135deg,#38BDF8,#0EA5E9,#0284C7);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+
+    /* subtítulo */
+    .ty-sub{
+      font-size:1.0625rem;
+      color:rgba(255,255,255,.70);
+      line-height:1.7;
+      font-weight:400;
+      margin-bottom:2.5rem;
+      animation:fadeUp .8s .65s cubic-bezier(.16,1,.3,1) both;
+    }
+    .ty-sub strong{color:#fff;font-weight:700;}
+
+    /* steps */
+    .steps{
+      display:flex;flex-direction:column;gap:.75rem;
+      text-align:left;margin-bottom:2.5rem;
+      animation:fadeUp .8s .75s cubic-bezier(.16,1,.3,1) both;
+    }
+    .step{
+      display:flex;align-items:center;gap:.875rem;
+      font-size:.9rem;font-weight:500;color:rgba(255,255,255,.75);
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:1.25rem;
+      padding:.875rem 1.125rem;
+    }
+    .step-num{
+      width:1.875rem;height:1.875rem;border-radius:50%;flex-shrink:0;
+      background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff;
+      font-size:.75rem;font-weight:800;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 12px rgba(14,165,233,.35);
+    }
+
+    /* botões */
+    .actions{
+      display:flex;flex-direction:column;gap:.875rem;
+      animation:fadeUp .8s .88s cubic-bezier(.16,1,.3,1) both;
+    }
+    .btn-main,.btn-sec{
+      display:inline-flex;align-items:center;justify-content:center;gap:.625rem;
+      padding:1.05rem 2rem;border-radius:9999px;
+      font-family:'Montserrat',sans-serif;font-weight:700;
+      font-size:.8125rem;letter-spacing:.07em;text-transform:uppercase;
+      text-decoration:none;
+      transition:transform .5s cubic-bezier(.34,1.56,.64,1),box-shadow .4s cubic-bezier(.16,1,.3,1);
+      position:relative;isolation:isolate;
+    }
+    .btn-main{
+      background:linear-gradient(135deg,#38BDF8,#0EA5E9,#0284C7);
+      color:#fff;
+      box-shadow:0 0 0 1px rgba(14,165,233,.20),0 8px 32px rgba(14,165,233,.35),0 24px 64px rgba(14,165,233,.18);
+    }
+    .btn-main:hover{transform:translateY(-3px) scale(1.025);box-shadow:0 0 0 2px rgba(14,165,233,.30),0 16px 56px rgba(14,165,233,.55);}
+    .btn-main::before{
+      content:'';position:absolute;inset:-3px;border-radius:inherit;
+      background:linear-gradient(135deg,#38BDF8,#0EA5E9,#0284C7);
+      opacity:.5;filter:blur(16px);z-index:-1;transition:opacity .4s,filter .4s;
+    }
+    .btn-main:hover::before{opacity:.9;filter:blur(24px);}
+
+    .btn-sec{
+      background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);
+      border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(12px);
+      font-size:.75rem;
+    }
+    .btn-sec:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);color:#fff;}
+
+    .btn-main svg,.btn-sec svg{width:1rem;height:1rem;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+    .btn-main:hover svg,.btn-sec:hover svg{transform:translateX(4px);}
+
+
+    /* keyframes */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes cardIn{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes checkPop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.18);opacity:1}100%{transform:scale(1);opacity:1}}
+    @keyframes orbFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(3%,4%) scale(1.06)}}
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+    }
+    @media(max-width:480px){
+      .card{padding:3rem 2rem;border-radius:2.25rem;}
+      .ty-title{font-size:1.75rem;}
+      .logo-top{gap:.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-bg"></div>
+
+  <!-- Card central -->
+  <div class="card" role="main">
+
+    <div class="check-wrap" aria-hidden="true">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 22l9 9 15-15" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1 class="ty-title">
+      Solicitação<br><em>recebida com sucesso!</em>
+    </h1>
+
+    <p class="ty-sub">
+      Nossa equipe entrará em contato pelo <strong>WhatsApp</strong> que você informou em breve para agendar sua avaliação personalizada.
+    </p>
+
+    <div class="steps" aria-label="Próximos passos">
+      <div class="step">
+        <div class="step-num">1</div>
+        Aguarde o contato da nossa equipe pelo WhatsApp
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        Confirme sua avaliação médica personalizada
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        Inicie sua transformação com o Método ITF
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="https://wa.me/55SEUNUMERO" class="btn-main" target="_blank" rel="noopener noreferrer">
+        Falar agora pelo WhatsApp
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="index.html" class="btn-sec">
+        Voltar ao site
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

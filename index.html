@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://connect.facebook.net" />
-  <link rel="preload" as="image" href="img/img.png" media="(min-width:768px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="img/imgmb.png" media="(max-width:767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="img/img.png" fetchpriority="high" media="(min-width:768px)" />
+  <link rel="preload" as="image" href="img/imgmb.png" fetchpriority="high" media="(max-width:767px)" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
@@ -40,10 +40,7 @@
   <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
   <div class="hero-grid-overlay" aria-hidden="true"></div>
 
-  <picture class="hero-bg-img" aria-hidden="true">
-    <source media="(max-width:767px)" srcset="img/imgmb.png"/>
-    <img src="img/img.png" alt="" loading="eager" fetchpriority="high"/>
-  </picture>
+  <div class="hero-bg-img" aria-hidden="true"></div>
 
   <div class="container hero-layout">
 
@@ -51,8 +48,8 @@
     <div class="hero-copy">
       <h1 class="hero-h1">
         <span class="hl-0">A dor crônica</span>
-        <span class="hl-1">não é apenas<br>um sintoma.</span>
-        <span class="hl-2">É um obstáculo<br>metabólico.</span>
+        <span class="hl-1">não é apenas <br>um sintoma.</span>
+        <span class="hl-2">É um obstáculo <br>metabólico.</span>
       </h1>
 
       <p class="hero-sub">
@@ -151,16 +148,10 @@
 
       <article class="compare-card" tabindex="0" aria-label="Antes e depois: fibromialgia">
         <div class="compare-before">
-          <div class="img-placeholder">
-            <span class="img-ph-label">Antes</span>
-            <p>Foto do paciente</p>
-          </div>
+          <img src="img/antes1.png" alt="Antes — Fibromialgia" loading="lazy"/>
         </div>
         <div class="compare-after">
-          <div class="img-placeholder img-ph-after">
-            <span class="img-ph-label">Depois</span>
-            <p>Foto do paciente</p>
-          </div>
+          <img src="img/depois1.png" alt="Depois — Fibromialgia" loading="lazy"/>
         </div>
         <div class="compare-overlay"><span class="compare-tag">Passe o mouse</span></div>
         <footer class="compare-caption">Fibromialgia · 16 semanas</footer>
@@ -168,16 +159,10 @@
 
       <article class="compare-card" tabindex="0" aria-label="Antes e depois: dor lombar">
         <div class="compare-before">
-          <div class="img-placeholder">
-            <span class="img-ph-label">Antes</span>
-            <p>Foto do paciente</p>
-          </div>
+          <img src="img/antes2.png" alt="Antes — Dor lombar" loading="lazy"/>
         </div>
         <div class="compare-after">
-          <div class="img-placeholder img-ph-after">
-            <span class="img-ph-label">Depois</span>
-            <p>Foto do paciente</p>
-          </div>
+          <img src="img/depois2.png" alt="Depois — Dor lombar" loading="lazy"/>
         </div>
         <div class="compare-overlay"><span class="compare-tag">Passe o mouse</span></div>
         <footer class="compare-caption">Dor lombar + obesidade · 12 semanas</footer>
@@ -185,16 +170,10 @@
 
       <article class="compare-card" tabindex="0" aria-label="Antes e depois: síndrome metabólica">
         <div class="compare-before">
-          <div class="img-placeholder">
-            <span class="img-ph-label">Antes</span>
-            <p>Foto do paciente</p>
-          </div>
+          <img src="img/antes3.png" alt="Antes — Síndrome metabólica" loading="lazy"/>
         </div>
         <div class="compare-after">
-          <div class="img-placeholder img-ph-after">
-            <span class="img-ph-label">Depois</span>
-            <p>Foto do paciente</p>
-          </div>
+          <img src="img/depois3.png" alt="Depois — Síndrome metabólica" loading="lazy"/>
         </div>
         <div class="compare-overlay"><span class="compare-tag">Passe o mouse</span></div>
         <footer class="compare-caption">Síndrome metabólica · 20 semanas</footer>
@@ -423,17 +402,10 @@
 
     <div class="about-photo-col reveal-block">
       <div class="about-photo-wrap">
-        <div class="about-photo-placeholder" role="img" aria-label="Foto do Dr. Fernando Petersen">
-          <div class="about-initials">FP</div>
-          <p>Foto do Dr. Fernando Petersen</p>
-        </div>
+        <img class="about-photo-img" src="img/dr.png" alt="Dr. Fernando Petersen" loading="lazy"/>
         <div class="about-float-badge glass-dark">
           <span data-count="5000" data-prefix="+">+0</span>
           <small>pacientes tratados</small>
-        </div>
-        <div class="about-float-tag glass-dark">
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1l1.9 3.8 4.2.6-3 2.9.7 4.2L8 10.5 4.2 12.5l.7-4.2-3-2.9 4.2-.6z" fill="currentColor"/></svg>
-          Especialista em Dor
         </div>
       </div>
     </div>
